@@ -62,19 +62,40 @@ game_over = False
 
 
 def draw():
+    # Draw background and bird
     screen.blit(BG, (0,0))
     screen.blit(BIRD_IMG, bird)
 
+    # Draw pipe pairs
     for pipe in pipes:
         screen.blit(pipe.img, pipe)
 
-    text_str = str(int(score))
-    if game_over:
-        text_str = f"Game Over: {text_str}"
+    # Draw score
+    text_font = pygame.font.SysFont("freesansbold", 40)
+    score_str = str(int(score))
+    score_render = text_font.render(score_str, True, "white")
+    if not game_over:
+        screen.blit(score_render, (10, 5))
 
-    text_font = pygame.font.SysFont("Liberation Mono", 40)
-    text_render = text_font.render(text_str, True, "white")
-    screen.blit(text_render, (10, 0))
+
+def draw_final_score():
+    # Set up text display messages
+    over_str = "Game Over!"
+    final_score_str = f"Final Score: {int(score)}"
+    try_again_str = "Click to try again."
+
+    # Choose font and size
+    text_font = pygame.font.SysFont("freesansbold", 40)
+    try_again_font = pygame.font.SysFont("freesansbold", 30)
+    
+    # Render text surfaces
+    over_render = text_font.render(over_str, True, (155, 0, 0))
+    final_score_render = text_font.render(final_score_str, True, "white")
+    try_again_render = try_again_font.render(try_again_str, True, "white")
+    # Blit text surfaces to screen
+    screen.blit(over_render, (WINDOW_WIDTH / 2 - over_render.get_width() / 2, (WINDOW_HEIGHT / 2 - over_render.get_height() / 2) - 50))
+    screen.blit(final_score_render, (WINDOW_WIDTH / 2 - final_score_render.get_width() / 2, (WINDOW_HEIGHT / 2 - final_score_render.get_height() / 2) + 10))
+    screen.blit(try_again_render, (WINDOW_WIDTH / 2 - try_again_render.get_width() / 2, (WINDOW_HEIGHT / 2 - try_again_render.get_height() / 2) + 70))
 
 
 def move():
@@ -107,6 +128,7 @@ def move():
             game_over = True
             die_sound.play()
             return
+        
 
     # Clean up old pipes
     while len(pipes) > 0 and pipes[0].x < -PIPE_WIDTH:
@@ -128,10 +150,6 @@ def create_pipes():
     bottom_pipe = Pipe(BOTTOM_PIPE_IMG)
     bottom_pipe.y = top_pipe.y + top_pipe.height + gap_y
     pipes.append(bottom_pipe)
-
-
-    print(len(pipes))
-
 
 
 while True:
@@ -167,5 +185,11 @@ while True:
         move()
 
         draw()
+        pygame.display.update()
+        clock.tick(FPS)
+    else:
+        sleep(0.2) # small delay to avoid immediate restart
+        draw()
+        draw_final_score()
         pygame.display.update()
         clock.tick(FPS)
