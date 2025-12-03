@@ -1,0 +1,33 @@
+# Flappy Bird (Python + Pygame-CE)
+
+A simple Flappy Bird clone built with Python and Pygame-CE.  
+Click to flap, avoid the pipes, and aim for the highest score.
+
+## Setup
+
+`pip install pygame-ce python main.py`
+
+## Features
+
+- Basic physics and collision detection
+- Pipe generation and scoring
+- Mouse-based controls
+- Modular code structure (Game, Bird, Pipe, Renderer, SoundManager)
+
+## Project Structure
+
+```
+main.py
+game.py
+bird.py
+pipe.py
+renderer.py
+sound_manager.py
+constants.py
+assets/
+```
+
+## Controls
+
+- Click: Flap
+- Click after Game Over: Restart
