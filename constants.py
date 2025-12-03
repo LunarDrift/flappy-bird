@@ -1,21 +1,30 @@
-# CONSTANTS
+# Window
 WINDOW_WIDTH = 360
 WINDOW_HEIGHT = 640
 FPS = 60
 
+# Bird
 BIRD_X = WINDOW_WIDTH / 8
 BIRD_Y = WINDOW_HEIGHT / 2
 BIRD_WIDTH = 34
 BIRD_HEIGHT = 24
-BIRD_VELOCITY_Y = 0 # move bird up/down speed
+FLAP_STRENGTH = -6
 FLAP_COOLDOWN = 120
 GRAVITY = 0.4
 
-PIPE_X = WINDOW_WIDTH
-PIPE_Y = 0
+# Pipes
 PIPE_WIDTH = 64
 PIPE_HEIGHT = 512
-PIPE_VELOCITY_X = -2
+PIPE_X = WINDOW_WIDTH
+PIPE_Y = 0
+PIPE_VELOCITY_X = -3
+PIPE_GAP = WINDOW_HEIGHT / 4
+
+# Assets
+BG_IMG = "assets/flappybirdbg.png"
+BIRD_IMG = "assets/flappybird.png"
+TOP_PIPE_IMG = "assets/toppipe.png"
+BOTTOM_PIPE_IMG = "assets/bottompipe.png"
 
 CRASH_SOUND = 'assets/sounds/sfx_hit.wav'
 DIE_SOUND = 'assets/sounds/sfx_die.wav'
