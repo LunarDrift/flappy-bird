@@ -1,7 +1,9 @@
 [project]
 name = "flappybird"
 version = "0.1.0"
-description = "Add your description here"
+description = "Flappy Bird made with Pygame"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "pygame-ce>=2.5.6",
+]

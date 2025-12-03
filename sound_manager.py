@@ -6,7 +6,7 @@ class SoundManager:
         # Load and set up sounds
         pygame.mixer.music.load(BG_MUSIC)
         pygame.mixer.music.play(-1)
-        pygame.mixer.music.set_volume(0.07)
+        pygame.mixer.music.set_volume(0.05)
         pygame.mixer.set_num_channels(32)
 
         # Bird sounds
