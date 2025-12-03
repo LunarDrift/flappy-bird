@@ -27,6 +27,9 @@ constants.py
 assets/
 ```
 
+![alt text](https://github.com/LunarDrift/flappy-bird/blob/main/assets/flappybird3.png "Example Image")
+![alt text](https://github.com/LunarDrift/flappy-bird/blob/main/assets/flappybird2.png "Example Image")
+
 ## Controls
 
 - Click: Flap
