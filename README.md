@@ -1,5 +1,7 @@
 # Flappy Bird (Python + Pygame-CE)
 
+Game 1 of the [20 Games Challenge](https://20_games_challenge.gitlab.io/challenge/)
+
 A simple Flappy Bird clone built with Python and Pygame-CE.  
 Click to flap, avoid the pipes, and aim for the highest score.
 
